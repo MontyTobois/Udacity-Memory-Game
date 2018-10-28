@@ -50,7 +50,7 @@ function shuffle(array) {
 ///Create the cards for the game
 
 function init() {
-  const shuffleIcons = shuffle(icons)
+  // const shuffleIcons = shuffle(icons)
   for (let i = 0; i < icons.length; i++) {
     const card = document.createElement("li");
     card.classList.add("card");
@@ -75,39 +75,39 @@ function click(card) {
       }
     }
 
-    // Checks to see if one card has been flipped
+    // Checks to see if one card has been clicked
     if (openCards.length === 1) {
       card.classList.add("open", "show", "disabled");
       openCards.push(this);
 
-      // Checks to see if two cards have been flipped
+      // Checks to see if two cards have been clicked
       compare(currCard, prevCard);
 
     } else {
 
-      // Checks is no cards are flipped
+      // Checks if no cards have been clicked
       currCard.classList.add("open", "show", "disabled");
       openCards.push(this);
     }
   });
 }
 
-///Compare two cards
+///Compares two cards that have been clicked for a match///
 function compare(currCard, prevCard) {
 
-  // Matched cards
+  /// Matched cards///
   if (currCard.innerHTML === prevCard.innerHTML) {
     currCard.classList.add("match");
     prevCard.classList.add("match");
     pairCards.push(currCard, prevCard);
     openCards = [];
 
-    // Check if game is OVER
+    /// Check if game is OVER after all cards have been matched///
     gameOver();
 
   } else {
 
-    //Wait a 600ms , than do this
+    //Wait a 400ms , than flip back to normal///
     setTimeout(function() {
       currCard.classList.remove("open", "show", "disabled");
       prevCard.classList.remove("open", "show", "disabled");
@@ -116,6 +116,7 @@ function compare(currCard, prevCard) {
     openCards = [];
   }
 
+///Will increment the move when cards are flipped back///
   addMove();
 }
 
@@ -125,13 +126,12 @@ function toggleModal() {
   modal.classList.toggle("hide");
 }
 
-///grabs the stas from the game and display
+///Grabs the stars from the game and displays them for winner///
 function fillInStats() {
   const timeStat = document.querySelector('.modal-time');
   const movesStat = document.querySelector('.modal-moves');
   const starsStat = document.querySelector('.modal-star');
   const clockTime = document.querySelector('.clock').innerHTML;
-  // const moves = document.querySelector('.moves').innerHTML;
   const stars = getStars();
   timeStat.innerHTML = `Time = ${clockTime}`;
   movesStat.innerHTML = `Moves = ${moves}`;
@@ -139,19 +139,17 @@ function fillInStats() {
 
 }
 
-///Shows when game is over
+///what must happen when game is over
 function gameOver() {
   if (pairCards.length === icons.length) {
     stopClock();
     fillInStats();
     toggleModal();
-
   }
 }
 
 ///Ratings for game
 const starsHolder = document.querySelector(".stars");
-
 function rating() {
   switch (moves) {
     case 10:
