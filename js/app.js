@@ -56,6 +56,7 @@ function init() {
     card.classList.add("card");
     card.innerHTML = `<i class="${icons[i]}"></i>`;
     cardsHolder.appendChild(card);
+
     // Add click event to cards
     click(card);
   }
@@ -111,8 +112,8 @@ function compare(currCard, prevCard) {
     setTimeout(function() {
       currCard.classList.remove("open", "show", "disabled");
       prevCard.classList.remove("open", "show", "disabled");
-
     }, 400);
+
     openCards = [];
   }
 
@@ -152,11 +153,11 @@ function gameOver() {
 const starsHolder = document.querySelector(".stars");
 function rating() {
   switch (moves) {
-    case 10:
+    case 15:
       starsHolder.innerHTML = `<li><i class="fa fa-star"></i></li>
       <li><i class="fa fa-star"></i></li>`;
       break;
-    case 20:
+    case 25:
       starsHolder.innerHTML = `<li><i class="fa fa-star"></i></li>`;
       break;
   }
@@ -173,7 +174,7 @@ function getStars() {
   return starCount;
 }
 
-///Time Function////////////
+///Time Function///
 function startTimer() {
   clockId = setInterval(() => {
     time++;
@@ -182,6 +183,7 @@ function startTimer() {
   }, 1000);
 }
 
+///Shows the time after a card has been clicked///
 function displayTime() {
   const clock = document.querySelector('.clock');
   console.log(clock);
@@ -197,6 +199,7 @@ function displayTime() {
   }
 }
 
+///Stops the clock after all cards have matched///
 function stopClock() {
   clearInterval(clockId);
 }
@@ -215,8 +218,7 @@ cancelBtn.addEventListener('click', function() {
   toggleModal();
 });
 
-///Restart game/////
-
+///Restart game for a clean slate///
 const resetbtn = document.querySelector(".restart");
 resetbtn.addEventListener("click", function() {
   // Delete all cards
@@ -229,7 +231,7 @@ resetbtn.addEventListener("click", function() {
   reset();
 });
 
-////Replay Game Thanks for playing////
+////Replay Game try again ////
 const modalReplayBtn = document.querySelector('.modal-replay');
 modalReplayBtn.addEventListener("click", function() {
   //Resets all cards position
@@ -238,13 +240,13 @@ modalReplayBtn.addEventListener("click", function() {
   //Call `init` to re-create card game
   init();
 
-  //Reset game
+  //Reset game, remove modal for next game///
   reset();
   toggleModal();
 });
 
 
-//Reset function//
+//Resets the game to the orignal state///
 function reset() {
   pairCards = []
   moves = 0;
