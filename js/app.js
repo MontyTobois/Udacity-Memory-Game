@@ -19,6 +19,7 @@ const icons = [
 ];
 
 const cardsHolder = document.querySelector(".deck");
+const starIcon = `<li><i class="fa fa-star"></i></li>`
 let openCards = [];
 let pairCards = [];
 let intialClick = false;
@@ -149,20 +150,21 @@ function gameOver() {
   }
 }
 
-///Ratings for game
+///Ratings for game, stars will be removed based on how many clicks on deck///
 const starsHolder = document.querySelector(".stars");
+
 function rating() {
   switch (moves) {
     case 15:
-      starsHolder.innerHTML = `<li><i class="fa fa-star"></i></li>
-      <li><i class="fa fa-star"></i></li>`;
+      starsHolder.innerHTML = starIcon + starIcon;
       break;
     case 25:
-      starsHolder.innerHTML = `<li><i class="fa fa-star"></i></li>`;
+      starsHolder.innerHTML = starIcon;
       break;
   }
 }
 
+///Grabs the stars to shows in modal///
 function getStars() {
   stars = document.querySelectorAll('.stars li');
   starCount = 0;
@@ -256,9 +258,7 @@ function reset() {
   stopClock();
   displayTime(0);
   intialClick = false;
-  starsHolder.innerHTML = `<li><i class="fa fa-star"></i></li>
-  <li><i class="fa fa-star"></i></li>
-  <li><i class="fa fa-star"></i></li>`
+  starsHolder.innerHTML = starIcon + starIcon + starIcon;
 }
 
 //////////Start Game for the first time!////////
