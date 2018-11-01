@@ -101,6 +101,7 @@ h1 {
   position: relative;
   background: #ffffff;
   transform: translate(-50%, -70%);
+  border: solid rgb(150, 52, 230);
 }
 
 .modal-header {
@@ -108,7 +109,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   padding: 01.5rem;
-  border-bottom: 1px solid purple;
+  border-bottom: 1px solid rgb(150, 52, 230);;
 }
 
 .modal-close {
@@ -121,7 +122,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  border-bottom: 1px solid purple;
+  border-bottom: 1px solid rgb(150, 52, 230);;
 }
 
 .modal-bttn {
