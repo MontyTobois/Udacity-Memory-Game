@@ -204,4 +204,9 @@ h1 {
   .score-panel {
     width: 50%;
   }
+  
+  .modal-body{
+    width: 70%;
+    padding: 5px;
+    min-height: 40vw;
 }

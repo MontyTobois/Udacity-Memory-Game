@@ -53,6 +53,7 @@ function click(card) {
   card.addEventListener("click", function() {
     const currCard = this;
     const prevCard = openCards[0];
+    //will start the clock and increment once card is card for first time
     if (firstClick === false) {
       firstClick = true;
       if (clockOff) {
@@ -61,6 +62,7 @@ function click(card) {
         clockOff = false;
       }
     }
+
 
     // Checks to see if one card has been clicked
     if (openCards.length === 1) {
