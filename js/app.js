@@ -1,22 +1,5 @@
 /* Create a list that holds all of your cards */
-const icons = [
-  "fa fa-diamond",
-  "fa fa-diamond",
-  "fa fa-paper-plane-o",
-  "fa fa-paper-plane-o",
-  "fa fa-anchor",
-  "fa fa-anchor",
-  "fa fa-bolt",
-  "fa fa-bolt",
-  "fa fa-cube",
-  "fa fa-cube",
-  "fa fa-leaf",
-  "fa fa-leaf",
-  "fa fa-bicycle",
-  "fa fa-bicycle",
-  "fa fa-bomb",
-  "fa fa-bomb"
-];
+const icons = ["fa fa-battery-full", "fa fa-battery-full", "fa fa-slack", "fa fa-slack", "fa fa-codepen", "fa fa-codepen", "fa fa-mobile", "fa fa-mobile", "fa fa-google-plus", "fa fa-google-plus", "fa fa-dropbox", "fa fa-dropbox", "fa fa-html5", "fa fa-html5", "fa fa-rss-square", "fa fa-rss-square"];
 ///global varaiables
 const cardsHolder = document.querySelector(".deck");
 const starIcon = `<li><i class="fa fa-star"></i></li>`
@@ -120,7 +103,7 @@ function compare(currCard, prevCard) {
     openCards = [];
   }
 
-///Will increment the move when cards are flipped back///
+  ///Will increment the move when cards are flipped back///
   addMove();
 }
 
@@ -154,6 +137,7 @@ function gameOver() {
 
 ///Ratings for game, stars will be removed based on how many clicks on deck///
 const starsHolder = document.querySelector(".stars");
+
 function rating() {
   switch (moves) {
     case 15:
@@ -185,14 +169,16 @@ function startTimer() {
   }, 1000);
 }
 
-///Shows the time after a card has been clicked///
+//Shows the time after a card has been clicked//
 function displayTime() {
   const clock = document.querySelector('.clock');
   clock.innerHTML = time;
 
+  //controls the seconds into minutes
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
 
+  //holds the placement for minutes and seconds
   if (seconds < 10) {
     clock.innerHTML = `${minutes}:0${seconds}`;
   } else {
@@ -207,6 +193,7 @@ function stopClock() {
 
 ///Checks the users click, every two cards that are flipped equals one move
 const movesHolder = document.querySelector(".moves");
+
 function addMove() {
   movesHolder.innerHTML = moves;
   rating();
@@ -250,14 +237,22 @@ modalReplayBtn.addEventListener("click", function() {
 //Resets the game to the orignal state///
 function reset() {
   pairCards = []
-  moves = 0;
+  // sets time to zero and wont start until cards is clicked
   time = 0;
   clockOff = true;
+  displayTime();
+
+  //sets moves to zero
+  moves = 0;
   movesHolder.innerHTML = moves;
+
+  /*stops the clock when hitting reset or replay button,
+  once clicked clock will increment*/
   stopClock();
-  displayTime(0);
   firstClick = false;
-  starsHolder.innerHTML = starIcon  +  starIcon  +  starIcon;
+
+  ///places the stars back to three
+  starsHolder.innerHTML = starIcon + starIcon + starIcon;
 }
 
 //////////Start Game for the first time!////////
