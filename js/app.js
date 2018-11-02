@@ -64,7 +64,8 @@ function init() {
   }
 }
 
-///Click function
+/*Click function for cards, also checks for first click
+- will increment the moves by 1*/
 function click(card) {
   card.addEventListener("click", function() {
     const currCard = this;
@@ -256,7 +257,7 @@ function reset() {
   stopClock();
   displayTime(0);
   firstClick = false;
-  starsHolder.innerHTML = starIcon + starIcon + starIcon;
+  starsHolder.innerHTML = starIcon  +  starIcon  +  starIcon;
 }
 
 //////////Start Game for the first time!////////
