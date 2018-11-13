@@ -31,6 +31,6 @@ This game is built with **HTML, CSS, JAVASCRIPT.**
 
 ## Credits
 
-* The webinar with Yahya Elharnony during FEND study Jam was helpful on understanding the structure of the game. I was able to build the foundation and move from there.
+* The webinar with Yahya Elharnony during [FEND study Jam](https://www.youtube.com/watch?v=G8J13lmApkQ&t=16s) was helpful on understanding the structure of the game. I was able to build the foundation and move from there.
 
-* Icons https://fontawesome.com/v4.7.0/
+* [Icons](https://fontawesome.com/v4.7.0/)
