@@ -12,11 +12,11 @@
 ## Instructions
 
 
-#* How The Game Works
+* How The Game Works
 
 The deck is made up of 8 different pairs of cards, each with different symbols on one side. The cards are shuffled randomly on the deck with the symbol face down. Flip the 16 cards over to match them together and beat the game. Have Fun.
 
-#* Rules
+* Rules
 
 0 - 14 moves : Three stars
 
@@ -33,6 +33,6 @@ This game is built with **HTML, CSS, JAVASCRIPT.**
 
 ## Credits
 
-* The webinar with Yahya Elharnony during FEND study Jam was helpful on understanding the structure of the game. I was able to build the foundation and move from there.
+* The webinar with Yahya Elharnony during [FEND study Jam](https://www.youtube.com/watch?v=G8J13lmApkQ&t=16s) was helpful on understanding the structure of the game. I was able to build the foundation and move from there.
 
-* Icons https://fontawesome.com/v4.7.0/
+* [Icons](https://fontawesome.com/v4.7.0/)
