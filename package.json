@@ -1,0 +1,14 @@
+{
+  "name": "fend-project-memory-game-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "*"
+  },
+  "author": "Andre Tobois",
+  "license": "ISC"
+}
