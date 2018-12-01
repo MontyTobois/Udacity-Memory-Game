@@ -11,7 +11,6 @@
 
 ## Instructions
 
-
 * How The Game Works
 
 The deck is made up of 8 different pairs of cards, each with different symbols on one side. The cards are shuffled randomly on the deck with the symbol face down. Flip the 16 cards over to match them together and beat the game. Have Fun.
