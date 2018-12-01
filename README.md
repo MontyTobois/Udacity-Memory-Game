@@ -7,6 +7,8 @@
 * [Language](#Language)
 * [Credits](#Credits)
 
+[DEMO](https://memory-test-game.herokuapp.com/)
+
 ## Instructions
 
 
